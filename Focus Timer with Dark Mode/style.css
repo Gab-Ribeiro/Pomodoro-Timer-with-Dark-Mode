@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --primary-text-color: #29292E;
+    --regular-bg-color: #E1E1E6;
+    --fill-color: #323238;
+    --selected-bg-color: #02799D;
+    --selected-fill-color: #FFFFFF;
+}
+
+.changeBrightness {
+    transition: all 1000ms;
+    background-color: #121214;
+    --primary-text-color: #FFFFFF;
+    --regular-bg-color: #29292E;
+    --fill-color: #C4C4CC;
+    --selected-bg-color: #0A3442;
+}
+
+body {
+    transition: all 1000ms;
+}
+
+main {
+    display: flex;
+    gap: 19.2rem;
+    align-items: center;
+    padding: 19.2rem  23rem;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+#timerPanel #timer {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12.6rem;
+    line-height: 14.7rem;
+    color: var(--primary-text-color);
+
+    display: flex;
+
+    padding-bottom: 4.8rem;
+}
+
+button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+path {
+    fill:var(--fill-color);
+}
+
+#cardSelection button.changeSelectedColor {
+    background-color: var(--selected-bg-color);
+}
+
+button.changeSelectedColor path {
+    fill:var(--selected-fill-color);
+}
+
+#cardSelection input.changeSelectedColor::-webkit-slider-runnable-track,
+#cardSelection input.changeSelectedColor::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--selected-fill-color);
+}
+
+/* #cardSelection input::-webkit-slider-thumb{
+    background: var(--selected-fill-color);
+}
+ */
+
+/* 
+The range input widget consists of two parts the thumb and the track. Each one of these parts has its own pseudo-class selector for styling with a vendor suffix for cross-browser support:
+
+Thumb:
+input[type=”range”]::-webkit-slider-thumb
+input[type=”range”]::-moz-range-thumb
+input[type=”range”]::-ms-thumb
+
+Track:
+input[type=”range”]::-webkit-slider-runnable-track
+input[type=”range”]::-moz-range-track
+input[type=”range”]::-ms-track 
+*/
+
+#cardSelection div {
+    position: relative;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    display: block;
+    position:absolute;
+    width: 9rem;
+    left: 18%;
+    top: 82%;
+    background: transparent;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: var(--fill-color);
+    height: 0.4rem;
+    border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 1.6rem;
+    width: 1.6rem;
+    border-radius: 999px;
+    background: var(--fill-color);
+    margin-top: calc((4px/2) - (16px/2));
+}
+
+#cardSelection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.2rem;
+}
+
+#cardSelection button {
+    border-radius: 2.4rem;
+    padding: 4rem 4rem 5.4rem;
+    background: var(--regular-bg-color);
+    width: 13.8rem;
+    height: 15.2rem;
+}
+
+#cardSelection button:hover {
+    opacity: 0.8;
+}
+
+#buttons {
+    display: flex;
+    gap: 4rem;
+}
+
+#buttons svg {
+transition: all 500ms;
+}
+
+#buttons svg:hover {
+    transform: scale(1.1);
+}
+
+.hide {
+    display: none;
+}
+
+#changeBrightness button {
+    position: absolute;
+    z-index: 1;
+    left: auto;
+    right: 6rem;
+    top: 6rem;
+    transition: all 500ms;
+}
+
+#changeBrightness button:hover {
+    transform: scale(1.1);
+}
+
